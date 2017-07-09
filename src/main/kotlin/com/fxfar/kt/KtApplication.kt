@@ -1,10 +1,10 @@
-package com.fxfar.Kt
+package com.fxfar.kt
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-class KtApplication
+open class KtApplication
 
 fun main(args: Array<String>) {
     SpringApplication.run(KtApplication::class.java, *args)

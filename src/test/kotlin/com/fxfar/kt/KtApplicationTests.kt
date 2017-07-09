@@ -1,4 +1,4 @@
-package com.fxfar.Kt
+package com.fxfar.kt
 
 import org.junit.Test
 import org.junit.runner.RunWith

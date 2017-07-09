@@ -15,6 +15,7 @@ buildscript {
 	}
 }
 
+apply plugin: 'war'
 apply plugin: 'kotlin'
 apply plugin: 'application'
 apply plugin: 'kotlin-spring'
@@ -37,7 +38,7 @@ repositories {
 	maven { url "https://repo.spring.io/milestone" }
 }
 
-mainClassName='com.fxfar.Kt.KtApplicationKt'
+mainClassName='com.fxfar.kt.KtApplicationKt'
 defaultTasks 'run'
 
 configurations {
@@ -46,7 +47,7 @@ configurations {
 }
 
 dependencies {
-  compile("org.springframework.boot:spring-boot-starter-web")
+  compile group: 'javax', name: 'javaee-api', version: '7.0'
   compile("org.springframework.boot:spring-boot-starter-jetty")
 
 	//compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.1-SNAPSHOT')
@@ -57,6 +58,7 @@ dependencies {
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 	runtime('org.postgresql:postgresql')
+  runtime('com.fasterxml.jackson.module:jackson-module-kotlin')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('io.projectreactor:reactor-test')
 }
